@@ -1,4 +1,4 @@
-/* RESETEO GENERAL Y PALETA BASE */
+/*estilos bases*/
 * {
   margin: 0;
   padding: 0;
@@ -11,16 +11,31 @@ body {
   color: #2d3748;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh; /* Fuerza al footer a quedarse siempre abajo */
 }
 
-/* BARRA DE NAVEGACIÓN */
-.header-nav {
-  background-color: #0b1b3d;
+/* estilo de la barra de navegacion*/
+.header-nav,
+.navbar-custom {
+  background-color: #0b1b3d !important; /* Azul oscuro oficial */
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-custom .navbar-brand {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+/* Ajustes del logo para no sedeforme*/
+.navbar-custom .navbar-brand img,
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-container {
@@ -40,6 +55,7 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* Enlaces del menú principal */
 .nav-menu {
   display: flex;
   list-style: none;
@@ -47,26 +63,28 @@ body {
   align-items: center;
 }
 
-.nav-menu a {
-  color: rgba(255, 255, 255, 0.75);
+.nav-menu a,
+.navbar-custom .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
   transition: color 0.2s ease;
-  padding-bottom: 4px;
 }
 
-.nav-menu a:hover {
-  color: #ffffff;
+/* Efectos al pasar el cursor y estado activo */
+.nav-menu a:hover,
+.navbar-custom .nav-link:hover {
+  color: #ffffff !important;
 }
 
-.nav-menu a.active {
-  color: #ffffff;
+.nav-menu a.active,
+.navbar-custom .nav-link.active {
+  color: #ffffff !important;
   font-weight: 600;
-  border-bottom: 2px solid #e30613;
 }
 
-/* BANNER DE CABECERA */
+/* Encabezados principales*/
 .banner-contacto {
   background-color: #ffffff;
   border-bottom: 1px solid #e2e8f0;
@@ -92,7 +110,7 @@ body {
   line-height: 1.6;
 }
 
-/* DISTRIBUCIÓN CENTRAL (GRID)*/
+/*  Organizar el contenido en dos columnas*/
 .main-contacto {
   flex: 1;
   max-width: 1200px;
@@ -107,7 +125,7 @@ body {
   gap: 2rem;
 }
 
-/* TARJETAS DE CONTENIDO */
+/* Estilos para los contenedores blancos con sombras suaves*/
 .tarjeta-formulario,
 .tarjeta-info {
   background-color: #ffffff;
@@ -132,6 +150,7 @@ body {
   line-height: 1.5;
 }
 
+/* Caja de reemplazo visual mientras se integra un formulario activo */
 .placeholder-formulario {
   border: 2px dashed #cbd5e0;
   background-color: #f7fafc;
@@ -141,7 +160,7 @@ body {
   color: #a0aec0;
 }
 
-/*DATOS DE CONTACTO Y UBICACIÓN */
+/*  Diseño para la lista de ubicación, teléfonos e iframe de mapa. */
 .lista-contacto {
   list-style: none;
   margin-bottom: 2rem;
@@ -169,7 +188,7 @@ body {
   color: #4a5568;
 }
 
-/* Contenedor del Mapa */
+/* Formato para la sección de mapa */
 .bloque-mapa h3 {
   font-size: 1.1rem;
   color: #0b1b3d;
@@ -189,95 +208,31 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* ==========================================
-   PIE DE PÁGINA (FOOTER)
-   ========================================== */
+/* pie de pagina*/
+.footer-custom,
 .footer-sitio {
-  background-color: #0b1b3d;
-  color: #ffffff;
+  background-color: #0b1b3d !important;
+  color: #ffffff !important;
   margin-top: auto;
-  padding-top: 2.5rem;
-  border-top: 3px solid #e30613;
 }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem 2rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+/* Forzamos que todo el texto y negritas dentro del footer sean blanco puro */
+.footer-custom .footer-line,
+.footer-custom .footer-line * {
+  color: #ffffff !important; 
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
 }
 
-.footer-col {
-  flex: 1;
-}
-
-.footer-titulo {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-  color: #ffffff;
-}
-
-.footer-desc {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-subtitulo {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  color: #ffffff;
-}
-
-.footer-links {
-  list-style: none;
-}
-
-.footer-links li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease, padding-left 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: #ffffff;
-  padding-left: 4px;
-}
-
-.footer-col p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 0.4rem;
-}
-
-.footer-col strong {
-  color: #ffffff;
-}
-
-.footer-bottom {
-  background-color: #071228;
-  text-align: center;
-  padding: 1.2rem 1.5rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/*RESPONSIVE (TABLETS Y MÓVILES) */
+/* hacer que todo se organice en pantallas pequeñas */
 @media (max-width: 850px) {
+  /* Cambiamos el grid de 2 columnas a 1 sola columna */
   .contacto-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Ajustamos el menú de navegación para celulares */
   .nav-container {
     flex-direction: column;
     gap: 1rem;
@@ -289,8 +244,8 @@ body {
     gap: 1rem;
   }
 
-  .footer-container {
-    flex-direction: column;
-    gap: 1.5rem;
+  /*si la pantalla es muy estrecha el pie de pagina se va a dividir en lineas */
+  .footer-custom .footer-line {
+    white-space: normal;
   }
 }
