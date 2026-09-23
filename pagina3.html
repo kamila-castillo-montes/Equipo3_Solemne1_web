@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destino Cordillera - Reserva y Contacto</title>
-  <!-- Hoja de estilos externa propia -->
+  <!-- Enlace al CSS propio  -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -24,15 +24,106 @@
     </div>
   </header>
 
-  <!-- Contenido principal  -->
-  <main class="main-content">
-    <!-- agregar el formulario y la información de contacto -->
+  <!-- Encabezado / Banner de la página -->
+  <section class="banner-contacto">
+    <div class="banner-contenido">
+      <h1>Reserva y Contacto</h1>
+      <p>Planifica tu visita a Destino Cordillera o contáctanos para coordinar excursiones, traslados y actividades guiadas.</p>
+    </div>
+  </section>
+
+  <!-- Contenido Central -->
+  <main class="main-contacto">
+    <div class="contacto-grid">
+
+      <!-- Columna 1: Espacio reservado para el Formulario  -->
+      <section class="tarjeta-formulario">
+
+      </section>
+
+      <!-- Columna 2: Ubicación Referencial y Datos de Contacto -->
+      <aside class="tarjeta-info">
+        <h2>Centro de Información Turística</h2>
+        <p class="desc-info">Punto oficial de atención al visitante, orientación de rutas y asistencia en montaña.</p>
+
+        <!-- Lista de datos -->
+        <ul class="lista-contacto">
+          <li>
+            <strong>Dirección:</strong>
+            <span>Av. Los Cóndores 1250, Sector La Parada</span>
+          </li>
+          <li>
+            <strong>Horario de Atención:</strong>
+            <span>Lunes a Domingo: 08:30 a 19:00 hrs</span>
+          </li>
+          <li>
+            <strong>Teléfono:</strong>
+            <span>+56 9 2000 4000</span>
+          </li>
+          <li>
+            <strong>Correo Electrónico:</strong>
+            <span>contacto@destinocordillera.cl</span>
+          </li>
+          <li>
+            <strong>Emergencias Cordillera:</strong>
+            <span>132</span>
+          </li>
+        </ul>
+
+        <!-- Bloque de Ubicación Referencial con Mapa -->
+        <div class="bloque-mapa">
+          <h3>Ubicación en el Mapa</h3>
+          <p class="nota-mapa">A 45 minutos del acceso cordillerano principal.</p>
+          <div class="contenedor-mapa">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106456.44430489248!2d-70.6692655!3d-33.5855585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d8544e314647%3A0xb30aa694c965c40!2sSan%20Jos%C3%A9%20de%20Maipo!5e0!3m2!1ses!2scl!4v1700000000000" 
+              width="100%" 
+              height="250" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </aside>
+
+    </div>
   </main>
 
-  <!-- Pie de página básico -->
+  <!-- Pie de Página (Footer) -->
   <footer class="footer-sitio">
-    <p>Destino Cordillera &copy; 2026</p>
-    <small>Plataforma oficial de promoción turística local. Todos los derechos reservados.</small>
+    <div class="footer-container">
+      
+      <div class="footer-col">
+        <h3 class="footer-titulo">Destino Cordillera</h3>
+        <p class="footer-desc">
+          Plataforma oficial de promoción turística local. Ecoturismo, cultura cordillerana y actividades al aire libre con respeto por el medio ambiente.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-subtitulo">Enlaces Rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="pagina1.html">Panoramas</a></li>
+          <li><a href="pagina2.html">Alojamiento y Gastronomía</a></li>
+          <li><a href="pagina3.html">Reserva y Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-subtitulo">Oficina de Turismo</h4>
+        <p><strong>Ubicación:</strong> Av. Los Cóndores 1250</p>
+        <p><strong>Teléfono:</strong> +56 9 2000 4000</p>
+        <p><strong>Email:</strong> contacto@destinocordillera.cl</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Destino Cordillera. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
 </body>
