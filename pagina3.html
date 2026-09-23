@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destino Cordillera - Reserva y Contacto</title>
-  <!-- Enlace al CSS propio  -->
+  
+  <!-- Vinculamos la hoja de estilos general CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Barra de Navegación -->
+  <!-- Encabezado y Navegacion Principal -->
   <header class="header-nav">
     <div class="nav-container">
-      <a href="index.html" class="logo">Destino Cordillera</a>
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Logo Destino Cordillera">
+        <span>Destino Cordillera</span>
+      </a>
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html">Inicio</a></li>
@@ -24,7 +28,7 @@
     </div>
   </header>
 
-  <!-- Encabezado / Banner de la página -->
+  <!-- Banner Superior de la pagina -->
   <section class="banner-contacto">
     <div class="banner-contenido">
       <h1>Reserva y Contacto</h1>
@@ -32,21 +36,77 @@
     </div>
   </section>
 
-  <!-- Contenido Central -->
+  <!-- Seccion Principal (Contenido dividido en dos columnas) -->
   <main class="main-contacto">
     <div class="contacto-grid">
 
-      <!-- Columna 1: Espacio reservado para el Formulario  -->
+      <!-- Columna 1: Formulario para solicitar informacion o reservar -->
       <section class="tarjeta-formulario">
+        <h2>Formulario de Reserva y Consultas</h2>
+        <p class="desc-formulario">Completa el formulario y un ejecutivo te responderá a la brevedad para confirmar disponibilidad.</p>
+        
+        <form class="form-contacto" action="#" method="POST">
+          <!-- Campo Nombre -->
+          <div class="grupo-campo">
+            <label for="nombre">Nombre Completo *</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+          </div>
 
+          <!-- Campos Correo y Telefono en paralelo -->
+          <div class="fila-campos">
+            <div class="grupo-campo">
+              <label for="email">Correo Electrónico *</label>
+              <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+            </div>
+            <div class="grupo-campo">
+              <label for="telefono">Teléfono / WhatsApp *</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" required>
+            </div>
+          </div>
+
+          <!-- Seleccion del panorama basado en la pagina 1 -->
+          <div class="grupo-campo">
+            <label for="actividad">Selecciona la Actividad o Panorama</label>
+            <select id="actividad" name="actividad">
+              <option value="" disabled selected>-- Elige una opción --</option>
+              <option value="glaciar">Mirador Glaciar El Morado</option>
+              <option value="termas">Termas Naturales Valle Verde</option>
+              <option value="bike">Circuito Mountain Bike El Peñón</option>
+              <option value="cascada">Cascada Las Ánimas</option>
+              <option value="observatorio">Observatorio Astronómico Cumbre</option>
+              <option value="cabalgata">Cabalgata Valle del Viento</option>
+              <option value="consulta_general">Consulta General / Alojamiento</option>
+            </select>
+          </div>
+
+          <!-- Campos de Fecha y Numero de personas -->
+          <div class="fila-campos">
+            <div class="grupo-campo">
+              <label for="fecha">Fecha Estimada de Visita</label>
+              <input type="text" id="fecha" name="fecha" placeholder="DD/MM/AAAA" pattern="\d{2}/\d{2}/\d{4}">
+            </div>
+            <div class="grupo-campo">
+              <label for="personas">Cantidad de Personas</label>
+              <input type="number" id="personas" name="personas" min="1" max="30" value="1">
+            </div>
+          </div>
+
+          <!-- Cuadro de Mensaje -->
+          <div class="grupo-campo">
+            <label for="mensaje">Mensaje o Solicitudes Especiales</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos si necesitas traslado, arriendo de equipos o si tienes dudas sobre el recorrido..."></textarea>
+          </div>
+
+          <!-- Boton para enviar -->
+          <button type="submit" class="btn-submit">Enviar Solicitud</button>
+        </form>
       </section>
 
-      <!-- Columna 2: Ubicación Referencial y Datos de Contacto -->
+      <!-- Columna 2: Informacion Turistica y Mapa -->
       <aside class="tarjeta-info">
         <h2>Centro de Información Turística</h2>
-        <p class="desc-info">Punto oficial de atención al visitante, orientación de rutas y asistencia en montaña.</p>
 
-        <!-- Lista de datos -->
+        <!-- Lista de contacto -->
         <ul class="lista-contacto">
           <li>
             <strong>Dirección:</strong>
@@ -62,7 +122,7 @@
           </li>
           <li>
             <strong>Correo Electrónico:</strong>
-            <span>contacto@destinocordillera.cl</span>
+            <span>reservas@destinocordillera.cl</span>
           </li>
           <li>
             <strong>Emergencias Cordillera:</strong>
@@ -70,7 +130,7 @@
           </li>
         </ul>
 
-        <!-- Bloque de Ubicación Referencial con Mapa -->
+        <!-- Mapa interactivo de Google Maps -->
         <div class="bloque-mapa">
           <h3>Ubicación en el Mapa</h3>
           <p class="nota-mapa">A 45 minutos del acceso cordillerano principal.</p>
@@ -91,10 +151,11 @@
     </div>
   </main>
 
-  <!-- Pie de Página (Footer) -->
+  <!-- Pie de pagina estandarizado con el color azul #0b1b3d -->
   <footer class="footer-sitio">
     <div class="footer-container">
       
+      <!-- Columna 1 del Footer: Sobre la marca -->
       <div class="footer-col">
         <h3 class="footer-titulo">Destino Cordillera</h3>
         <p class="footer-desc">
@@ -102,6 +163,7 @@
         </p>
       </div>
 
+      <!-- Columna 2 del Footer: Menu rapido -->
       <div class="footer-col">
         <h4 class="footer-subtitulo">Enlaces Rápidos</h4>
         <ul class="footer-links">
@@ -112,6 +174,7 @@
         </ul>
       </div>
 
+      <!-- Columna 3 del Footer: Datos breves -->
       <div class="footer-col">
         <h4 class="footer-subtitulo">Oficina de Turismo</h4>
         <p><strong>Ubicación:</strong> Av. Los Cóndores 1250</p>
@@ -121,6 +184,7 @@
 
     </div>
 
+    <!-- Sub-footer  -->
     <div class="footer-bottom">
       <p>&copy; 2026 Destino Cordillera. Todos los derechos reservados.</p>
     </div>

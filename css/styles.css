@@ -1,23 +1,29 @@
-/*estilos bases*/
+
+
+/* Limpiamos margenes*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Configuracion del body para el fondo general y que el footer no se suba si hay poco contenido */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #f4f6f9;
   color: #2d3748;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Fuerza al footer a quedarse siempre abajo */
+  min-height: 100vh; /* Esto obliga a que el body mida como minimo el alto de la pantalla */
 }
 
-/* estilo de la barra de navegacion*/
+
+/* barra de navegacion */
+
+/* Estilos de la barra de navegacion fija arriba con el azul corporativo */
 .header-nav,
 .navbar-custom {
-  background-color: #0b1b3d !important; /* Azul oscuro oficial */
+  background-color: #0b1b3d !important; /* Azul marino oficial del proyecto */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -30,14 +36,17 @@ body {
   color: #ffffff !important;
 }
 
-/* Ajustes del logo para no sedeforme*/
+/* Evitamos que la foto del logo se deforme o quede gigante */
 .navbar-custom .navbar-brand img,
 .logo img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
+  height: 42px !important;
+  width: 35px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
+/* Contenedor principal del navbar para alinear el logo a la izquierda y el menu a la derecha */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -47,15 +56,19 @@ body {
   align-items: center;
 }
 
+/* Alineacion del logo junto al texto */
 .logo {
   color: #ffffff;
   font-size: 1.3rem;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* Separacion entre el logo y el texto */
 }
 
-/* Enlaces del menú principal */
+/* Lista de botones del menu de navegacion */
 .nav-menu {
   display: flex;
   list-style: none;
@@ -72,19 +85,18 @@ body {
   transition: color 0.2s ease;
 }
 
-/* Efectos al pasar el cursor y estado activo */
+/* Cambio de color al pasar el cursor y para marcar la pagina activa */
 .nav-menu a:hover,
-.navbar-custom .nav-link:hover {
-  color: #ffffff !important;
-}
-
+.navbar-custom .nav-link:hover,
 .nav-menu a.active,
 .navbar-custom .nav-link.active {
   color: #ffffff !important;
-  font-weight: 600;
 }
 
-/* Encabezados principales*/
+
+/*baner y contacto*/
+
+/* Banner blanco con el titulo principal arriba de la pagina */
 .banner-contacto {
   background-color: #ffffff;
   border-bottom: 1px solid #e2e8f0;
@@ -110,7 +122,7 @@ body {
   line-height: 1.6;
 }
 
-/*  Organizar el contenido en dos columnas*/
+/* Estructura principal en Grid para dividir la pantalla en dos columnas */
 .main-contacto {
   flex: 1;
   max-width: 1200px;
@@ -121,11 +133,11 @@ body {
 
 .contacto-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Columna izquierda para formulario, derecha para info */
   gap: 2rem;
 }
 
-/* Estilos para los contenedores blancos con sombras suaves*/
+/* Tarjetas blancas con sombra para ordenar el contenido */
 .tarjeta-formulario,
 .tarjeta-info {
   background-color: #ffffff;
@@ -142,7 +154,7 @@ body {
   font-weight: 700;
 }
 
-.instruccion-form,
+.desc-formulario,
 .desc-info {
   font-size: 0.95rem;
   color: #718096;
@@ -150,17 +162,81 @@ body {
   line-height: 1.5;
 }
 
-/* Caja de reemplazo visual mientras se integra un formulario activo */
-.placeholder-formulario {
-  border: 2px dashed #cbd5e0;
-  background-color: #f7fafc;
-  padding: 3rem 1.5rem;
-  text-align: center;
-  border-radius: 10px;
-  color: #a0aec0;
+
+/* estilo para formulario de reserva*/
+
+/* Estructura vertical del formulario usando flexbox */
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-/*  Diseño para la lista de ubicación, teléfonos e iframe de mapa. */
+/* Para ordenar cada etiqueta  */
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Poner dos campos juntos en la misma linea ( correo y telefono) */
+.fila-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.grupo-campo label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Estilos compartidos para que se vean iguales */
+.grupo-campo input,
+.grupo-campo select,
+.grupo-campo textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Marca en azul el borde cuando el usuario hace clic dentro de */
+.grupo-campo input:focus,
+.grupo-campo select:focus,
+.grupo-campo textarea:focus {
+  border-color: #0b1b3d;
+  box-shadow: 0 0 0 3px rgba(11, 27, 61, 0.1);
+}
+
+/* Boton para enviar el formulario */
+.btn-submit {
+  background-color: #0b1b3d;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+  background-color: #162f65; /* Se pone un poco mas claro cuando pasas el mouse */
+}
+
+
+/* informacion de contacto y mapa */
+
+/* Lista de datos de contacto */
 .lista-contacto {
   list-style: none;
   margin-bottom: 2rem;
@@ -188,7 +264,7 @@ body {
   color: #4a5568;
 }
 
-/* Formato para la sección de mapa */
+/* Seccion donde va el iframe de Google Maps */
 .bloque-mapa h3 {
   font-size: 1.1rem;
   color: #0b1b3d;
@@ -208,31 +284,104 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* pie de pagina*/
-.footer-custom,
-.footer-sitio {
+
+/* pie de pagina */
+
+/* Estilo general para dejar el footer azul oscuro al fondo */
+.footer-sitio,
+.footer-custom {
   background-color: #0b1b3d !important;
   color: #ffffff !important;
-  margin-top: auto;
+  padding-top: 2.5rem;
+  margin-top: auto; /* Empuja el footer bien abajo */
 }
 
-/* Forzamos que todo el texto y negritas dentro del footer sean blanco puro */
-.footer-custom .footer-line,
-.footer-custom .footer-line * {
-  color: #ffffff !important; 
-  font-size: 0.95rem;
-  font-weight: 500;
+/* ordenar las 3 columnas de informacion  */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.footer-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.footer-subtitulo {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-/* hacer que todo se organice en pantallas pequeñas */
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.4rem;
+}
+
+/* Franja con el copyright hasta abajo */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/*diseño para celulres y tablest */
+
 @media (max-width: 850px) {
-  /* Cambiamos el grid de 2 columnas a 1 sola columna */
+  /* En celulares dejamos todo a 1 sola columna hacia abajo */
   .contacto-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Ajustamos el menú de navegación para celulares */
+  .fila-campos {
+    grid-template-columns: 1fr; /* Para que nombre y correo no se apreten en pantallas chicas */
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr; /* Pone las 3 columnas del footer una abajo de otra */
+    gap: 1.5rem;
+  }
+
+  /* Acomodamos la barra de navegacion para pantallas chicas */
   .nav-container {
     flex-direction: column;
     gap: 1rem;
@@ -242,10 +391,5 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-  }
-
-  /*si la pantalla es muy estrecha el pie de pagina se va a dividir en lineas */
-  .footer-custom .footer-line {
-    white-space: normal;
   }
 }
