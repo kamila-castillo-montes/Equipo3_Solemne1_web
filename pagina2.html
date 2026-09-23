@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destino Cordillera - Alojamiento y Gastronomía</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Iconos de Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Paleta base compartida */
+    .bg-custom-dark { 
+      background-color: #0b1b3d; 
+    }
+    .btn-custom { 
+      background-color: #e30613; 
+      color: white; 
+    }
+    .btn-custom:hover { 
+      background-color: #b3000d; 
+      color: white; 
+    }
+
+    /* Fondo general  */
+    body {
+      background-color: #f4f6f9;
+      color: #333333;
+    }
+
+    /* Estilo de Tarjetas Horizontales */
+    .card-panorama {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card-panorama:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Ajuste de imagen lateral */
+    .card-panorama img {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+    }
+
+    /* Etiquetas/Badges estilo cápsula */
+    .tag-pill {
+      display: inline-block;
+      border: 1px solid #c2c9d6;
+      color: #4a5568;
+      border-radius: 50px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background-color: #ffffff;
+      margin-right: 6px;
+      margin-bottom: 8px;
+    }
+
+    /* Tipografía de títulos */
+    .panorama-title {
+      font-weight: 700;
+      color: #1a202c;
+      font-size: 1.4rem;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    .panorama-text {
+      color: #555e6d;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3" style="background-color: #0b1b3d !important;">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="index.html">
+        <img src="img/logo.png" alt="Logo" width="40" height="40" class="rounded-circle">
+        <span class="fw-bold" style="color: #ffffff !important;">Destino Cordillera</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="pagina1.html">Panoramas</a></li>
+          <li class="nav-item"><a class="nav-link active fw-bold text-white" href="pagina2.html">Alojamiento y Gastronomía</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="pagina3.html">Reserva y Contacto</a></li>
+        </ul>
+      </div>
+    </div> 
+  </nav>
+
+  <!-- Encabezado de la Sección -->
+  <header class="py-5 text-center bg-white border-bottom mb-4">
+    <div class="container">
+      <h1 class="fw-bold display-5">Alojamiento y Gastronomía</h1>
+      <p class="text-muted lead mx-auto" style="max-width: 650px;">
+        Disfruta de una estadía confortable y degusta los sabores locales. Explora nuestras opciones de hospedaje y restaurantes.
+      </p>
+    </div>
+  </header>
+
+  <!-- Listado de Alojamientos y Restaurantes -->
+  <main class="container pb-5">
+    
+    <!-- Título Separador Alojamiento -->
+    <div class="mb-4 mt-2">
+      <h3 class="fw-bold" style="color: #0b1b3d;">Opciones de Hospedaje</h3>
+    </div>
+
+    <div class="row g-4 mb-5">
+      
+      <!-- Hospedaje 1: Estilo Torres del Paine -->
+      <div class="col-12">
+        <article class="card card-panorama">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="img/IMAGENHOTEL1.jpg" alt="Hotel en Torres del Paine">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body p-4">
+                <div>
+                  <span class="tag-pill"><i class="bi bi-building"></i> Hotel Refugio</span>
+                  <span class="tag-pill"><i class="bi bi-star-fill text-warning"></i> Vistas a la Montaña</span>
+                </div>
+                <h2 class="panorama-title">Hotel Refugio del Paine</h2>
+                <p class="panorama-text">
+                  Acogedor refugio ubicado a los pies de las imponentes montañas. Ofrece habitaciones con calefacción, vistas panorámicas y un ambiente ideal para descansar y reponer energías después de un largo día de trekking por los senderos australes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Hospedaje 2: Estilo Desierto Florido -->
+      <div class="col-12">
+        <article class="card card-panorama">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="img/IMAGENHOTEL2.jpg" alt="Lodge en Desierto Florido">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body p-4">
+                <div>
+                  <span class="tag-pill"><i class="bi bi-sun"></i> Eco-Lodge</span>
+                  <span class="tag-pill">Entorno Natural</span>
+                </div>
+                <h2 class="panorama-title">Lodge Desierto Florido</h2>
+                <p class="panorama-text">
+                  Experimenta la magia del norte en nuestras instalaciones ecológicas. Un espacio diseñado para la desconexión total, rodeado de flora nativa y cielos despejados, perfectos para la observación de estrellas durante la noche.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Hospedaje 3: Estilo Cajón del Maipo -->
+      <div class="col-12">
+        <article class="card card-panorama">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="img/IMAGENHOTEL3.jpg" alt="Cabañas en Cajón del Maipo">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body p-4">
+                <div>
+                  <span class="tag-pill"><i class="bi bi-house-door"></i> Cabañas</span>
+                  <span class="tag-pill">Tinajas Calientes</span>
+                </div>
+                <h2 class="panorama-title">Cabañas El Cajón</h2>
+                <p class="panorama-text">
+                  Cabañas rústicas completamente equipadas, ideales para escapadas familiares o de fin de semana. Disfruta de la tranquilidad del entorno y relájate en nuestras tinajas de agua caliente al aire libre rodeado de la precordillera.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+    <!-- Título Separador Gastronomía -->
+    <div class="mb-4">
+      <h3 class="fw-bold" style="color: #0b1b3d;">Restaurantes y Sabores</h3>
+    </div>
+
+    <div class="row g-4">
+      
+      <!-- Restaurante 1: Casa Bosque -->
+      <div class="col-12">
+        <article class="card card-panorama">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="img/IMAGENRESTAURANTE1.jpg" alt="Restaurante Casa Bosque">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body p-4">
+                <div>
+                  <span class="tag-pill"><i class="bi bi-tree"></i> Entorno Rústico</span>
+                  <span class="tag-pill">Carnes y Parrilla</span>
+                </div>
+                <h2 class="panorama-title">Restaurante Casa Bosque</h2>
+                <p class="panorama-text">
+                  Especialistas en carnes a la parrilla y gastronomía típica chilena. Disfruta de un ambiente cálido, familiar y rústico, con la mejor atención y sabores tradicionales elaborados con ingredientes frescos de la zona.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Restaurante 2: Casa del Chocolate -->
+      <div class="col-12">
+        <article class="card card-panorama">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="img/IMAGENCAFETERIA2.jpg" alt="La Casa del Chocolate">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+              <div class="card-body p-4">
+                <div>
+                  <span class="tag-pill"><i class="bi bi-cup-hot"></i> Chocolatería</span>
+                  <span class="tag-pill">Repostería Artesanal</span>
+                </div>
+                <h2 class="panorama-title">La Casa del Chocolate</h2>
+                <p class="panorama-text">
+                  El rincón más dulce de la montaña. Ofrecemos una amplia variedad de chocolates artesanales, repostería de autor, pasteles caseros, chocolate caliente y el mejor café para acompañar tu tarde de paseo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Pie de página coherente -->
+  <footer class="py-3 mt-4" style="background-color: #0b1b3d !important;">
+    <div class="container text-center">
+      <p class="mb-0 text-white" style="color: #ffffff !important; font-size: 0.95rem; font-weight: 500;">
+        <strong style="color: #ffffff !important;">Destino Cordillera © 2026</strong> — Plataforma oficial de promoción turística local. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
